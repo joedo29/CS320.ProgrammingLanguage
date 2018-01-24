@@ -1,3 +1,9 @@
+// Author: Joe Do
+// Date: January 22, 2018
+// CS320 - Programming Language
+// Program objective: Write a Java application that provides the user
+// with the course schedule for a particular course in a given program at BC.
+
 import java.net.*;
 import java.io.*;
 import java.util.*;
@@ -53,10 +59,9 @@ public class BCCourseSchedule{
 
     // Present course info to users
     System.out.println();
-    System.out.println("Computer Science Courses in " + quarterInput + " " + yearInput);
+    System.out.println(programName + " Courses in " + quarterInput + " " + yearInput);
     System.out.println("==================================");
     System.out.println("Code: " + courseID);
-    System.out.println(url);
 
     URL courseInfo = new URL(url);
     BufferedReader scan = new BufferedReader(new InputStreamReader(courseInfo.openStream()));
@@ -67,12 +72,14 @@ public class BCCourseSchedule{
     while((secondInput = scan.readLine())!= null){
       secondText += secondInput +"\n";
     }
-    // Item number: </span>3450</span>
-    Pattern pattern0 = Pattern.compile("Item\\snumber:\\s</span>(.*)</span>");
+
+    // Pattern pattern0 = Pattern.compile("Item\\snumber:\\s</span>(.*)" +str+"</span>");
+
+    Pattern pattern0 = Pattern.compile("<span\\sclass=\"courseID\">CS\\s101</span>\\s<span\\sclass=\"courseTitle\">(.*)</span>");
     Matcher matcher1 = pattern0.matcher(secondText);
     while(matcher1.find()){
-      System.out.println("Item#: " + matcher1.group(1));
+      System.out.println("Title#: " + matcher1.group(1));
+      System.out.println("==================================");
     }
-
   }
 }
