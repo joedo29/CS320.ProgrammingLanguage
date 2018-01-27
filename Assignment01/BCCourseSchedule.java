@@ -74,11 +74,14 @@ public class BCCourseSchedule{
     }
 
     // Pattern pattern0 = Pattern.compile("Item\\snumber:\\s</span>(.*)" +str+"</span>");
-
-    Pattern pattern0 = Pattern.compile("<span\\sclass=\"courseID\">CS\\s101</span>\\s<span\\sclass=\"courseTitle\">(.*)</span>");
+    // String str = "cs"
+//     Pattern pattern0 = Pattern.compile("<span class=\"courseID\">CS 101</span>.*?<span class=\"courseTitle\">(.*?)</span>",Pattern.DOTALL); ,Pattern.DOTALL
+    Pattern pattern0 = Pattern.compile("<span class=\"courseID\">"+tokens[0].toUpperCase()+"\\s"+tokens[1]+"</span>.*?<span class=\"courseTitle\">(.*?)</span>(.*?)Item number: </span>(.*?)</span>(.*?)<a href=(.*?)>(.*?)</a>", Pattern.DOTALL);
     Matcher matcher1 = pattern0.matcher(secondText);
     while(matcher1.find()){
-      System.out.println("Title#: " + matcher1.group(1));
+      System.out.println("Item#: " + matcher1.group(3));
+      System.out.println("Course Title: " + matcher1.group(1));
+      System.out.println("Instructor: " + matcher1.group(6));
       System.out.println("==================================");
     }
   }
