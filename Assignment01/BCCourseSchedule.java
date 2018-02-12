@@ -73,9 +73,6 @@ public class BCCourseSchedule{
       secondText += secondInput +"\n";
     }
 
-    // Pattern pattern0 = Pattern.compile("Item\\snumber:\\s</span>(.*)" +str+"</span>");
-    // String str = "cs"
-//     Pattern pattern0 = Pattern.compile("<span class=\"courseID\">CS 101</span>.*?<span class=\"courseTitle\">(.*?)</span>",Pattern.DOTALL); ,Pattern.DOTALL
     Pattern pattern0 = Pattern.compile("<span class=\"courseID\">"+tokens[0].toUpperCase()+"\\s"+tokens[1]+"</span>.*?<span class=\"courseTitle\">(.*?)</span>(.*?)Item number: </span>(.*?)</span>(.*?)<a href=(.*?)>(.*?)</a>", Pattern.DOTALL);
     Matcher matcher1 = pattern0.matcher(secondText);
     while(matcher1.find()){

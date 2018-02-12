@@ -9,6 +9,8 @@ public class Test{
 		double d = 2.3;
 		char ch = 'a';
 		String text = "CS 320 Programming Language";
+		String text = "abc123xyz";
+
 		if(ch == 'a'){
 			int k = 10;
 			boolean flag = true;

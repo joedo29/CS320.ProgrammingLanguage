@@ -41,6 +41,7 @@ public class ReadJavaFile{
     Pattern pattern = Pattern.compile("(int|double|float|char|String|boolean)\\s(.*)=(.*);");
     Matcher matcher = pattern.matcher(text);
     while(matcher.find()){
+      System.out.println("group " + matcher.group(0));
       System.out.println("Type: " + matcher.group(1));
       System.out.println("Variable Name: " + matcher.group(2));
       System.out.println("Value: " + matcher.group(3));

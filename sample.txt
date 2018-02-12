@@ -1,0 +1,11 @@
+<
+"books"->[
+<
+"isbn"-> "9781593275846",
+"title"-> "Eloquent JavaScript, Second Edition", "author"-> "Marijn Haverbeke",
+"publisher"-> "No Starch Press",
+"pages"-> 472,
+"website"-> "http://eloquentjavascript.net/"
+>, <
+> ]
+>
